@@ -1,63 +1,79 @@
 # Bluestock Mutual Fund Capstone Project
 
 ## Project Overview
-This project analyzes Indian Mutual Fund data to provide insights into fund performance, investor behavior, and market trends.
+This project is a Mutual Fund Analytics Platform that ingests, cleans, stores, and analyzes mutual fund datasets to generate business insights and visualizations.
 
 ## Project Structure
 ```
 bluestock_mf_capstone/
 ├── data/
 │   ├── raw/              # Raw CSV files
-│   ├── processed/        # Processed data
-│   └── db/              # Database files
-├── scripts/             # Python scripts for ETL and analysis
+│   ├── processed/        # Cleaned data files
+│   └── db/               # SQLite database files
 ├── notebooks/           # Jupyter notebooks
-├── sql/                 # SQL queries
-├── dashboard/           # Dashboard files
-└── reports/             # Generated reports
+├── reports/             # Reports and exports
+│   └── charts/          # Exported visualization PNGs
+├── scripts/             # Supporting scripts
+├── sql/                 # Schema and query SQL files
+├── dashboard/           # Dashboard or presentation files
+├── etl_pipeline.py      # ETL pipeline entrypoint
+├── data_dictionary.md   # Dataset definitions and field descriptions
+├── README.md            # Project documentation
+└── requirements.txt     # Python dependencies
 ```
 
 ## Datasets
-1. **01_fund_master.csv** - Fund metadata and information
-2. **02_nav_history.csv** - Net Asset Value history
-3. **03_aum_by_fund_house.csv** - Assets Under Management by fund house
-4. **04_monthly_sip_inflows.csv** - Monthly SIP inflows data
-5. **05_category_inflows.csv** - Category-wise inflows
-6. **06_industry_folio_count.csv** - Industry portfolio holdings count
-7. **07_scheme_performance.csv** - Scheme performance metrics
-8. **08_investor_transactions.csv** - Investor transaction data
-9. **09_portfolio_holdings.csv** - Portfolio holdings details
-10. **10_benchmark_indices.csv** - Benchmark indices data
+1. **01_fund_master.csv** - Fund metadata and AMFI scheme details
+2. **02_nav_history.csv** - Daily NAV history for schemes
+3. **03_aum_by_fund_house.csv** - Quarterly AUM by AMC
+4. **04_monthly_sip_inflows.csv** - Monthly SIP inflow trends
+5. **05_category_inflows.csv** - Category-level inflows
+6. **06_industry_folio_count.csv** - Folio growth statistics
+7. **07_scheme_performance.csv** - Scheme performance and risk metrics
+8. **08_investor_transactions.csv** - Investor transaction and demographic data
+9. **09_portfolio_holdings.csv** - Portfolio holdings by scheme
+10. **10_benchmark_indices.csv** - Benchmark index values
 
-## Setup Instructions
-
-1. **Install Dependencies**
+## Day 2 — Data Cleaning & SQL Database Design
+1. Copy the source CSV files into `data/raw/`.
+2. Run the ETL pipeline:
    ```bash
-   pip install -r requirements.txt
+   python etl_pipeline.py
    ```
+3. Cleaned datasets are saved to `data/processed/`.
+4. The SQLite database is created at `data/db/bluestock_mf.db`.
+5. Schema and analytical queries are available in the `sql/` folder.
 
-2. **Place Data Files**
-   - Copy all CSV files to `data/raw/` folder
-
-3. **Run Data Ingestion**
+## Day 3 — Exploratory Data Analysis
+1. Open the EDA notebook:
    ```bash
-   python scripts/data_ingestion.py
+   jupyter notebook notebooks/EDA_Analysis.ipynb
    ```
+2. The notebook generates 15+ visualizations and exports PNG charts to `reports/charts/`.
+3. Key analysis topics include NAV trends, AUM growth, SIP inflows, category heatmaps, investor demographics, state-level transactions, fund performance, and benchmark comparisons.
 
-4. **Fetch Live NAV**
-   ```bash
-   python scripts/live_nav_fetch.py
-   ```
+## Generated Artifacts
+- `etl_pipeline.py`
+- `sql/schema.sql`
+- `sql/queries.sql`
+- `data_dictionary.md`
+- `notebooks/EDA_Analysis.ipynb`
+- `data/db/bluestock_mf.db`
+- `reports/charts/` PNG exports
+- Cleaned CSV files in `data/processed/`
 
-## DAY 1 Completion Status
-- ✅ Project folder structure created
-- ✅ Git repository initialized
-- ✅ Data ingestion script prepared
-- ✅ Live NAV fetch script prepared
-- ✅ Requirements file configured
+## Dependencies
+Install dependencies before running ETL and EDA:
+```bash
+pip install -r requirements.txt
+```
+
+## Notes
+- The ETL pipeline removes duplicates, standardizes dates, validates numeric values, and creates a production-ready SQLite data model.
+- The notebook includes markdown explanations, observations, and business insights for every chart.
 
 ## Author
 Capstone Project - Bluestock
 
 ## Date
-June 2, 2026
+June 4, 2026
