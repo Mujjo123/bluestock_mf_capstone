@@ -6,6 +6,7 @@ plotly
 sqlalchemy
 requests
 scipy
+statsmodels
 jupyter
 python-dotenv
 openpyxl

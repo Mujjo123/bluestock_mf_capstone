@@ -52,12 +52,29 @@ bluestock_mf_capstone/
 2. The notebook generates 15+ visualizations and exports PNG charts to `reports/charts/`.
 3. Key analysis topics include NAV trends, AUM growth, SIP inflows, category heatmaps, investor demographics, state-level transactions, fund performance, and benchmark comparisons.
 
+## Day 4 — Fund Performance Analytics
+1. Run the performance analytics script:
+   ```bash
+   python scripts/performance_analytics.py
+   ```
+2. Or open the Day 4 notebook:
+   ```bash
+   jupyter notebook notebooks/Performance_Analytics.ipynb
+   ```
+3. Generated outputs include:
+   - `reports/fund_scorecard.csv`
+   - `reports/alpha_beta.csv`
+   - `reports/benchmark_comparison.csv`
+   - `reports/charts/benchmark_comparison_chart.png`
+
 ## Generated Artifacts
 - `etl_pipeline.py`
 - `sql/schema.sql`
 - `sql/queries.sql`
 - `data_dictionary.md`
 - `notebooks/EDA_Analysis.ipynb`
+- `notebooks/Performance_Analytics.ipynb`
+- `scripts/performance_analytics.py`
 - `data/db/bluestock_mf.db`
 - `reports/charts/` PNG exports
 - Cleaned CSV files in `data/processed/`
