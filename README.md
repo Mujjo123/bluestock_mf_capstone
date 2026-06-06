@@ -75,6 +75,7 @@ bluestock_mf_capstone/
 2. Dashboard-ready CSV files are generated in `dashboard/data/`.
 3. Placeholder dashboard screenshots are exported to `reports/dashboard_screenshots/`.
 4. Review dashboard documentation in `dashboard/dashboard_summary.md` for page definitions, KPIs, and filter behavior.
+5. A placeholder Power BI file is included at `dashboard/dashboard.pbix` for deliverable structure.
 
 ## Generated Artifacts
 - `etl_pipeline.py`
@@ -85,6 +86,7 @@ bluestock_mf_capstone/
 - `notebooks/Performance_Analytics.ipynb`
 - `dashboard/dashboard_data_prep.py`
 - `dashboard/dashboard_summary.md`
+- `dashboard/dashboard.pbix`
 - `dashboard/README.md`
 - `data/db/bluestock_mf.db`
 - `reports/charts/` PNG exports

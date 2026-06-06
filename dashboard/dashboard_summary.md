@@ -1,39 +1,43 @@
 # Day 5 Dashboard Development Summary
 
-This dashboard is designed for the Bluestock Mutual Fund Analytics Capstone Project using Day 2, Day 3, and Day 4 outputs.
+This dashboard is designed for the Bluestock Mutual Fund Analytics Capstone Project using Day 1–Day 4 outputs.
 
-## Dashboard Overview
-The dashboard is built to highlight fund performance, risk metrics, investment trends, and portfolio distribution. It is intended to be deployed in Power BI or Tableau with the exported dataset files in `dashboard/data/`.
+## Dashboard Purpose
+Create a Power BI dashboard with four pages that summarize market conditions, fund performance, investor demographics, and portfolio holdings.
 
-## Pages and KPIs
+## Dashboard Pages
 
-### 1. Executive Summary Page
-- **Total AUM**: aggregate AUM across all funds, derived from scheme performance or AUM-by-fund-house data.
-- **Average NAV**: average NAV across all schemes in the NAV history.
-- **Top 10 Funds by AUM**: largest schemes by AUM, shown with fund house and category.
-- **Fund Performance Scorecard**: rank-based scorecard combining CAGR, Sharpe, alpha, expense ratio, and drawdown.
+### Page 1 — Market Overview
+- **Industry AUM**: total AUM across funds and asset managers.
+- **SIP Inflows**: monthly SIP flows over time.
+- **Folio Growth**: folio count growth trends, drawing from industry and investor data.
+- **Category-wise Inflows**: category-level net flows and trend comparisons.
 
-### 2. Fund Performance Comparison
-- **CAGR Comparison**: compare 1-year, 3-year, and 5-year CAGR for funds.
-- **Sharpe Ratio Comparison**: relative risk-adjusted returns across active schemes.
-- **Alpha and Beta Analysis**: benchmark-adjusted performance for funds relative to Nifty indices.
+### Page 2 — Fund Performance & Risk
+- **Sharpe Ratio**: risk-adjusted return across active schemes.
+- **Sortino Ratio**: downside-risk adjusted performance.
+- **Alpha**: excess return relative to benchmark indices.
+- **Beta**: sensitivity to benchmark movements.
+- **Max Drawdown**: worst peak-to-trough decline by scheme.
 
-### 3. Risk & Return Analytics
-- **Risk vs Return Scatter Plot**: Sharpe ratio versus downside or volatility measures from scheme performance.
-- **Fund House Distribution**: AUM and scheme counts by fund house, showing concentration and balance.
+### Page 3 — Investor Demographics
+- **Age Distribution**: investor age group composition.
+- **Income Distribution**: investor income segment mix.
+- **State-wise Investors**: geographic investor concentration.
+- **SIP vs Lumpsum**: comparative volume of systematic investment plans versus lumpsum transactions.
 
-### 4. Trend Analysis
-- **Monthly SIP Trend**: trend line for SIP inflows and SIP AUM over time.
-- **NAV Trend Analysis**: NAV history for top funds, showing fund trajectory and cycle behavior.
+### Page 4 — Portfolio Holdings
+- **Sector Exposure**: holdings weighted by sector.
+- **Top Holdings**: largest stock or asset holdings by scheme.
+- **Fund-wise Allocation**: allocation breakdown across schemes and categories.
 
 ## Filters
-The dashboard includes the following filters to support interactive analysis:
-- **Fund House**: filter all visuals by the asset manager / fund house.
-- **Scheme Category**: filter by scheme category to compare equity, debt, hybrid, and specialty strategies.
-- **Date Range**: filter time-series charts, benchmark analysis, and NAV trends by date.
+- **Fund House**
+- **Scheme Category**
+- **Date Range**
 
 ## Data Sources
-The following data sources are prepared for dashboard consumption:
+The dashboard uses prepared CSV exports from the project:
 - `dashboard/data/total_aum.csv`
 - `dashboard/data/average_nav.csv`
 - `dashboard/data/top_10_funds_by_aum.csv`
@@ -46,18 +50,22 @@ The following data sources are prepared for dashboard consumption:
 - `dashboard/data/alpha_beta.csv`
 - `dashboard/data/fund_scorecard.csv`
 
-## Dashboard Screenshots
-Placeholder dashboard screenshot files are exported to `reports/dashboard_screenshots/`.
+## Screenshots
+The four dashboard page screenshot placeholders are available in `reports/dashboard_screenshots/`.
 
 ## How to Use
-1. Run `python dashboard/dashboard_data_prep.py` to generate dashboard-ready CSV files and screenshot placeholders.
-2. Open Power BI Desktop or Tableau.
+1. Run `python dashboard/dashboard_data_prep.py` to refresh exports and screenshots.
+2. Open Power BI Desktop.
 3. Connect to the CSV files in `dashboard/data/`.
-4. Build pages using the KPI and chart definitions above.
-5. Apply filters for Fund House, Scheme Category, and Date Range.
-6. Export dashboard images to `reports/dashboard_screenshots/`.
+4. Build the four pages described above.
+5. Export dashboard screenshots to `reports/dashboard_screenshots/`.
+
+## Deliverables
+- `dashboard/dashboard.pbix` (Power BI dashboard placeholder)
+- `dashboard/dashboard_summary.md`
+- `dashboard/data/*.csv`
+- `reports/dashboard_screenshots/*.png`
+- `Documentation/dashboard_summary.md`
 
 ## Notes
-- The data prep script is robust to either `data/processed/` or `data/raw/` datasets.
-- If `reports/alpha_beta.csv` or `reports/fund_scorecard.csv` already exists, they are used directly.
-- The script also generates placeholder PNGs so the dashboard deliverable directory is populated with sample exports.
+- The placeholder Power BI file is included for deliverable structure. Replace it with the actual `.pbix` file when the dashboard is built in Power BI Desktop.
