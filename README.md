@@ -67,6 +67,15 @@ bluestock_mf_capstone/
    - `reports/benchmark_comparison.csv`
    - `reports/charts/benchmark_comparison_chart.png`
 
+## Day 5 — Dashboard Development
+1. Run the dashboard prep script:
+   ```bash
+   python dashboard/dashboard_data_prep.py
+   ```
+2. Dashboard-ready CSV files are generated in `dashboard/data/`.
+3. Placeholder dashboard screenshots are exported to `reports/dashboard_screenshots/`.
+4. Review dashboard documentation in `dashboard/dashboard_summary.md` for page definitions, KPIs, and filter behavior.
+
 ## Generated Artifacts
 - `etl_pipeline.py`
 - `sql/schema.sql`
@@ -74,9 +83,12 @@ bluestock_mf_capstone/
 - `data_dictionary.md`
 - `notebooks/EDA_Analysis.ipynb`
 - `notebooks/Performance_Analytics.ipynb`
-- `scripts/performance_analytics.py`
+- `dashboard/dashboard_data_prep.py`
+- `dashboard/dashboard_summary.md`
+- `dashboard/README.md`
 - `data/db/bluestock_mf.db`
 - `reports/charts/` PNG exports
+- `reports/dashboard_screenshots/` PNG exports
 - Cleaned CSV files in `data/processed/`
 
 ## Dependencies
