@@ -77,6 +77,22 @@ bluestock_mf_capstone/
 4. Review dashboard documentation in `dashboard/dashboard_summary.md` for page definitions, KPIs, and filter behavior.
 5. A placeholder Power BI file is included at `dashboard/dashboard.pbix` for deliverable structure.
 
+## Day 6 — Advanced Analytics and Risk Metrics
+1. Run the Day 6 analytics pipeline:
+   ```bash
+   python scripts/advanced_analytics.py
+   ```
+2. Open the notebook:
+   ```bash
+   jupyter notebook notebooks/advanced_analytics.ipynb
+   ```
+3. Generated outputs include:
+   - `reports/alpha_beta_table.csv`
+   - `reports/fund_sharpe_ranks.csv`
+   - `reports/var_drawdown_summary.csv`
+   - Chart placeholders in `reports/advanced_charts/`
+4. Summary documentation is available in `Documentation/advanced_analytics_summary.md`.
+
 ## Generated Artifacts
 - `etl_pipeline.py`
 - `sql/schema.sql`

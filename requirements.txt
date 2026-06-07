@@ -10,3 +10,4 @@ statsmodels
 jupyter
 python-dotenv
 openpyxl
+pillow
