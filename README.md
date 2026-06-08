@@ -78,20 +78,29 @@ bluestock_mf_capstone/
 5. A placeholder Power BI file is included at `dashboard/dashboard.pbix` for deliverable structure.
 
 ## Day 6 — Advanced Analytics and Risk Metrics
-1. Run the Day 6 analytics pipeline:
+1. Open the comprehensive Day 6 analytics notebook:
+   ```bash
+   jupyter notebook notebooks/Day_6_Advanced_Analytics.ipynb
+   ```
+2. The notebook performs complete analysis including:
+   - **Risk & Performance Metrics**: Sharpe ratio, Sortino ratio, VaR 95%, max drawdown
+   - **Ranking Tables**: Fund performance rankings by multiple metrics
+   - **Benchmark Analysis**: Alpha/Beta vs Nifty 50/100, tracking error, rolling correlation
+   - **Investor Demographics**: Age, income, state, SIP vs Lumpsum, city tier, gender analysis
+   - **Professional Visualizations**: Risk/return scatter, Sharpe rankings, Alpha/Beta comparison, state distribution, income distribution, SIP/Lumpsum pie, benchmark comparison
+
+3. Generated outputs include:
+   - `reports/fund_sharpe_ranks.csv` - Sharpe and Sortino rankings
+   - `reports/var_drawdown_summary.csv` - Risk metrics and drawdown analysis
+   - `reports/alpha_beta_table.csv` - Alpha/Beta vs benchmarks
+   - `reports/rolling_correlations.csv` - Fund-to-benchmark correlations
+   - `reports/Day_6_Insights.md` - Business insights and recommendations
+   - Interactive HTML charts in `reports/`
+
+4. Alternative: Run the lightweight Day 6 analytics pipeline:
    ```bash
    python scripts/advanced_analytics.py
    ```
-2. Open the notebook:
-   ```bash
-   jupyter notebook notebooks/advanced_analytics.ipynb
-   ```
-3. Generated outputs include:
-   - `reports/alpha_beta_table.csv`
-   - `reports/fund_sharpe_ranks.csv`
-   - `reports/var_drawdown_summary.csv`
-   - Chart placeholders in `reports/advanced_charts/`
-4. Summary documentation is available in `Documentation/advanced_analytics_summary.md`.
 
 ## Generated Artifacts
 - `etl_pipeline.py`
@@ -100,11 +109,16 @@ bluestock_mf_capstone/
 - `data_dictionary.md`
 - `notebooks/EDA_Analysis.ipynb`
 - `notebooks/Performance_Analytics.ipynb`
+- `notebooks/Day_6_Advanced_Analytics.ipynb` ⭐ **NEW**
+- `scripts/performance_analytics.py`
+- `scripts/advanced_analytics.py`
 - `dashboard/dashboard_data_prep.py`
 - `dashboard/dashboard_summary.md`
 - `dashboard/dashboard.pbix`
 - `dashboard/README.md`
+- `Documentation/Day_6_Analytics_Summary.md` ⭐ **NEW**
 - `data/db/bluestock_mf.db`
+- `reports/` - CSV outputs, interactive HTML charts, insights reports
 - `reports/charts/` PNG exports
 - `reports/dashboard_screenshots/` PNG exports
 - Cleaned CSV files in `data/processed/`
